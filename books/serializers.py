@@ -9,7 +9,7 @@ class BookInfoSerializer(serializers.Serializer):
     bcomment = serializers.IntegerField(default=0, label='评论量')
     bimage = serializers.ImageField(allow_null=True, label='图片')
     is_delete = serializers.BooleanField(default=False, label='逻辑删除')
-    heroinfo_set = serializers.StringRelatedField(read_only=True, many=True)
+    heroinfo_set = serializers.StringRelatedField(read_only=True, many=True, label='英雄')
 
 
 class HeroInfoSerializer(serializers.Serializer):
