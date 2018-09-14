@@ -2,8 +2,8 @@ from django.conf.urls import url
 from books.views import BooksInfoView, BookInfoView
 
 urlpatterns = [
-    url(r'^books/$', BooksInfoView.as_view()),
-    url(r'^books/(?P<pk>\d+)/$', BookInfoView.as_view())
+    url(r'^books/$', BooksInfoView.as_view({'get': 'list', 'post': 'create'})),
+    url(r'^books/(?P<pk>\d+)/$', BookInfoView.as_view({'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}))
 ]
 
 from rest_framework.routers import DefaultRouter
